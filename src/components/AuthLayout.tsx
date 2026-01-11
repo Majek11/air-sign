@@ -12,11 +12,11 @@ const AuthLayout = ({ children }: AuthLayoutProps) => {
     <div className="min-h-screen gradient-hero">
       <Header showLogout />
 
-      <div className="container mx-auto flex px-8 py-8 min-h-[calc(100vh-80px)]">
+      <div className="container mx-auto flex flex-col lg:flex-row px-4 lg:px-8 py-4 lg:py-8 min-h-[calc(100vh-80px)]">
         <AuthSidebar />
 
-        <main className="flex-1 flex items-start justify-center bg-card rounded-r-3xl shadow-card pt-8">
-          <div className="w-full max-w-xl py-16 px-12">{children}</div>
+        <main className="flex-1 flex items-start justify-center bg-card rounded-3xl lg:rounded-l-none lg:rounded-r-3xl shadow-card pt-8">
+          <div className="w-full max-w-xl py-8 px-6 lg:py-16 lg:px-12">{children}</div>
         </main>
       </div>
 

@@ -14,11 +14,11 @@ const DashboardLayout = ({ children, title, subtitle }: DashboardLayoutProps) =>
     <div className="min-h-screen gradient-hero">
       <DashboardHeader />
 
-      <div className="flex px-6 pb-6 min-h-[calc(100vh-80px)]">
+      <div className="flex flex-col lg:flex-row px-4 lg:px-6 pb-6 min-h-[calc(100vh-80px)]">
         <DashboardSidebar />
 
-        <main className="flex-1 bg-card rounded-r-3xl shadow-card">
-          <div className="p-8">
+        <main className="flex-1 bg-card rounded-3xl lg:rounded-l-none lg:rounded-r-3xl shadow-card overflow-hidden">
+          <div className="p-4 lg:p-8">
             {/* Top Bar with Title and Actions */}
             <div className="flex items-start justify-between mb-8">
               <div>

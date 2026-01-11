@@ -9,26 +9,26 @@ const Landing = () => {
     <div className="min-h-screen gradient-hero">
       <Header />
 
-      <main className="container mx-auto px-6 py-12 flex items-center justify-between gap-8 min-h-[calc(100vh-80px)]">
+      <main className="container mx-auto px-6 py-12 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8 min-h-[calc(100vh-80px)]">
         {/* Hero Content */}
         <div className="flex-1 max-w-xl animate-fade-in">
-          <h1 className="text-5xl md:text-6xl font-bold leading-tight text-foreground mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground mb-6 text-center lg:text-left">
             Create a programmable{" "}
             <span className="text-gradient-primary">document signing</span>{" "}
             for compliance.
           </h1>
-          
-          <p className="text-lg text-muted-foreground mb-8">
+
+          <p className="text-lg text-muted-foreground mb-8 text-center lg:text-left">
             An API-driven document signing solution built for fintech compliance processes
           </p>
 
-          <div className="flex items-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
             <Link to="/create-account">
               <Button size="lg" className="rounded-full px-8 shadow-button">
                 Get Started Now!
               </Button>
             </Link>
-            
+
             <Link
               to="/docs"
               className="flex items-center gap-2 text-foreground font-medium hover:text-primary transition-colors group"

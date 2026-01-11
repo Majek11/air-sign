@@ -22,7 +22,7 @@ const DashboardSidebar = () => {
   };
 
   return (
-    <aside className="w-[280px] min-h-[calc(100vh-120px)] bg-card rounded-l-3xl pt-8 px-6 pb-6 flex flex-col border border-border">
+    <aside className="hidden lg:flex w-[280px] min-h-[calc(100vh-120px)] bg-card rounded-l-3xl pt-8 px-6 pb-6 flex-col border border-border">
       {/* Compose Button */}
       <Link to="/dashboard/compose">
         <Button className="w-full h-12 rounded-xl text-base font-semibold mb-8">
@@ -40,11 +40,10 @@ const DashboardSidebar = () => {
             <Link
               key={item.path}
               to={item.path}
-              className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 ${
-                active
+              className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 ${active
                   ? "bg-[#D4F5E0] text-primary font-medium"
                   : "text-muted-foreground hover:bg-muted hover:text-foreground"
-              }`}
+                }`}
             >
               <Icon className="w-5 h-5" />
               <span>{item.label}</span>

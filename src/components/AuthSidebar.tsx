@@ -13,7 +13,7 @@ const AuthSidebar = () => {
   const location = useLocation();
 
   return (
-    <aside className="w-[280px] min-h-[calc(100vh-120px)] bg-sidebar rounded-l-3xl pt-12 px-8 pb-8 flex flex-col border border-sidebar-border">
+    <aside className="hidden lg:flex w-[280px] min-h-[calc(100vh-120px)] bg-sidebar rounded-l-3xl pt-12 px-8 pb-8 flex-col border border-sidebar-border">
       <nav className="flex-1 space-y-1">
         {navItems.map((item) => {
           const isActive = location.pathname === item.path;
