@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+/* Airsign Design System - Soft yellow-green fintech aesthetic */
+
+@layer base {
+  :root {
+    /* Core brand colors */
+    --background: 65 80% 92%;
+    --background-gradient-start: 60 70% 90%;
+    --background-gradient-end: 90 50% 92%;
+    --foreground: 220 20% 20%;
+
+    /* Cards and surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 20%;
+
+    /* Primary - Teal/Emerald */
+    --primary: 168 76% 32%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary */
+    --secondary: 65 60% 85%;
+    --secondary-foreground: 220 20% 20%;
+
+    /* Muted */
+    --muted: 60 30% 90%;
+    --muted-foreground: 220 10% 50%;
+
+    /* Accent - Light green highlight */
+    --accent: 145 60% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Destructive - Coral red for logout */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Form elements */
+    --border: 220 10% 85%;
+    --input: 220 10% 85%;
+    --ring: 168 76% 32%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 96.5%;
+    --sidebar-foreground: 220 20% 20%;
+    --sidebar-primary: 168 76% 32%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 145 60% 92%;
+    --sidebar-accent-foreground: 168 76% 32%;
+    --sidebar-border: 0 0% 96.5%;
+    --sidebar-ring: 168 76% 32%;
+
+    /* Custom tokens */
+    --gradient-hero: linear-gradient(135deg, hsl(60, 70%, 90%) 0%, hsl(90, 50%, 92%) 100%);
+    --shadow-card: 0 4px 24px -4px hsla(220, 20%, 20%, 0.08);
+    --shadow-button: 0 2px 8px -2px hsla(168, 76%, 32%, 0.3);
+  }
+
+  .dark {
+    --background: 220 20% 10%;
+    --foreground: 60 30% 95%;
+    --card: 220 20% 12%;
+    --card-foreground: 60 30% 95%;
+    --popover: 220 20% 12%;
+    --popover-foreground: 60 30% 95%;
+    --primary: 168 76% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 15% 20%;
+    --secondary-foreground: 60 30% 95%;
+    --muted: 220 15% 18%;
+    --muted-foreground: 60 20% 65%;
+    --accent: 145 60% 40%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 168 76% 45%;
+    --sidebar-background: 220 20% 10%;
+    --sidebar-foreground: 60 30% 95%;
+    --sidebar-primary: 168 76% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 18%;
+    --sidebar-accent-foreground: 168 76% 45%;
+    --sidebar-border: 220 15% 20%;
+    --sidebar-ring: 168 76% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: linear-gradient(135deg, hsl(60, 70%, 90%) 0%, hsl(95, 55%, 90%) 100%);
+  }
+
+  .gradient-hero-subtle {
+    background: linear-gradient(180deg, hsl(60, 70%, 92%) 0%, hsl(90, 50%, 94%) 100%);
+  }
+
+  .text-gradient-primary {
+    background: linear-gradient(135deg, hsl(168, 76%, 32%) 0%, hsl(145, 60%, 45%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
