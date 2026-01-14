@@ -14,7 +14,7 @@ const Landing = () => {
         <div className="flex-1 max-w-xl animate-fade-in">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground mb-6 text-center lg:text-left">
             Create a programmable{" "}
-            <span className="text-gradient-primary">document signing</span>{" "}
+            <span className="text-gradient-primary" style={{ fontFamily: 'Pecita, sans-serif' }}>document signing</span>{" "}
             for compliance.
           </h1>
 

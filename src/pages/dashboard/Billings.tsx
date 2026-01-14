@@ -1,4 +1,4 @@
-import { RefreshCw } from "lucide-react";
+import { Eye } from "lucide-react";
 import DashboardLayout from "@/components/DashboardLayout";
 
 const transactions = [
@@ -29,17 +29,17 @@ const Billings = () => {
       {/* Credit Balance & Account Info */}
       <div className="flex gap-4 mb-8">
         {/* Credit Balance Card */}
-        <div className="flex-1 bg-gradient-to-br from-primary to-teal-600 rounded-2xl p-6 text-white relative overflow-hidden">
+        <div className="w-[60%] bg-gradient-to-br from-primary to-teal-600 rounded-2xl p-6 text-white relative overflow-hidden">
           <p className="text-sm opacity-90 mb-2">Credit Balance</p>
           <div className="flex items-baseline gap-1">
             <span className="text-5xl font-bold">N 0.00,000</span>
             <span className="text-2xl">.00</span>
           </div>
-          <RefreshCw className="absolute right-6 top-1/2 -translate-y-1/2 w-8 h-8 opacity-50" />
+          <Eye className="absolute right-6 top-1/2 -translate-y-1/2 w-8 h-8 opacity-50" />
         </div>
 
         {/* Account Info */}
-        <div className="w-80 bg-white border border-border rounded-2xl p-6">
+        <div className="w-[40%] bg-white border border-border rounded-2xl p-6">
           <div className="space-y-4">
             <div className="flex justify-between">
               <span className="text-muted-foreground">Account</span>

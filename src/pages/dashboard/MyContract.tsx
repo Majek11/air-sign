@@ -1,6 +1,24 @@
 import { useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { Bold, Italic, Underline, Upload, ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  Bold,
+  Italic,
+  Underline,
+  Upload,
+  ChevronLeft,
+  ChevronRight,
+  Image as ImageIcon,
+  Link as LinkIcon,
+  List,
+  ListOrdered,
+  AlignLeft,
+  AlignCenter,
+  AlignRight,
+  Strikethrough,
+  ChevronDown,
+  Highlighter,
+  Type
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import DashboardLayout from "@/components/DashboardLayout";
 
@@ -50,11 +68,10 @@ const MyContract = () => {
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            className={`pb-3 text-sm font-medium transition-colors relative ${
-              activeTab === tab.id
+            className={`pb-3 text-sm font-medium transition-colors relative ${activeTab === tab.id
                 ? "text-primary"
                 : "text-muted-foreground hover:text-foreground"
-            }`}
+              }`}
           >
             {tab.label}
             {activeTab === tab.id && (
@@ -100,34 +117,106 @@ const MyContract = () => {
             </div>
           </div>
 
-          {/* Toolbar */}
-          <div className="flex items-center gap-2 mb-2">
-            <button className="p-2 hover:bg-muted rounded">
-              <Bold className="w-4 h-4" />
-            </button>
-            <button className="p-2 hover:bg-muted rounded">
-              <Italic className="w-4 h-4" />
-            </button>
-            <button className="p-2 hover:bg-muted rounded">
-              <Underline className="w-4 h-4" />
-            </button>
-            <button className="p-2 hover:bg-muted rounded">
-              <Upload className="w-4 h-4" />
-            </button>
-          </div>
+          {/* Rich Text Editor Interface */}
+          <div className="bg-background border border-border rounded-xl overflow-hidden mb-6 shadow-sm">
+            {/* Editor Header */}
+            <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-card/50">
+              <button className="flex items-center gap-2 px-4 py-2 bg-white border border-border/60 hover:bg-muted/50 rounded-full text-sm font-medium transition-colors shadow-sm">
+                <ImageIcon className="w-4 h-4 text-muted-foreground" />
+                <span>Add Media</span>
+              </button>
+              <div className="flex items-center gap-6 text-sm font-medium mr-2">
+                <button className="text-foreground font-semibold">Visual</button>
+                <button className="text-muted-foreground hover:text-foreground transition-colors">Text</button>
+              </div>
+            </div>
 
-          {/* Text Editor */}
-          <textarea
-            className="w-full h-64 p-4 bg-muted/30 border border-border rounded-xl text-sm font-mono resize-none focus:outline-none focus:ring-2 focus:ring-primary/20"
-            placeholder="Lorem ipsum dolor sit amet consectetur..."
-            defaultValue="Lorem ipsum dolor sit amet consectetur. Semper vitae adipiscing at non. Mauris commodo blandit tincidunt nibh pellentesque nunc et. In maecenas velit pharetra at enim rutrum mauris dignissim eu. Nunc interdum netus in facilisis donec et."
-          />
+            {/* Toolbar */}
+            <div className="flex items-center gap-1.5 px-4 py-2 border-b border-border bg-white flex-wrap">
+              <button className="flex items-center gap-2 px-3 py-1.5 hover:bg-muted rounded text-sm font-medium text-muted-foreground hover:text-foreground mr-2 transition-colors">
+                Paragraph
+                <ChevronDown className="w-3 h-3 opacity-50" />
+              </button>
+
+              <div className="w-px h-5 bg-border mx-1" />
+
+              {/* Text Formatting */}
+              <button className="p-2 hover:bg-muted rounded text-muted-foreground hover:text-foreground transition-colors">
+                <Type className="w-4 h-4" />
+              </button>
+              <button className="p-2 hover:bg-muted rounded text-muted-foreground hover:text-foreground transition-colors">
+                <Highlighter className="w-4 h-4" />
+              </button>
+              <button className="p-2 hover:bg-muted rounded text-muted-foreground hover:text-foreground transition-colors">
+                <Bold className="w-4 h-4" />
+              </button>
+              <button className="p-2 hover:bg-muted rounded text-muted-foreground hover:text-foreground transition-colors">
+                <Italic className="w-4 h-4" />
+              </button>
+              <button className="p-2 hover:bg-muted rounded text-muted-foreground hover:text-foreground transition-colors">
+                <Underline className="w-4 h-4" />
+              </button>
+              <button className="p-2 hover:bg-muted rounded text-muted-foreground hover:text-foreground transition-colors">
+                <Strikethrough className="w-4 h-4" />
+              </button>
+
+              <div className="w-px h-5 bg-border mx-1" />
+
+              {/* Alignment */}
+              <button className="p-2 hover:bg-muted rounded text-muted-foreground hover:text-foreground transition-colors">
+                <AlignLeft className="w-4 h-4" />
+              </button>
+              <button className="p-2 hover:bg-muted rounded text-muted-foreground hover:text-foreground transition-colors">
+                <AlignCenter className="w-4 h-4" />
+              </button>
+              <button className="p-2 hover:bg-muted rounded text-muted-foreground hover:text-foreground transition-colors">
+                <AlignRight className="w-4 h-4" />
+              </button>
+
+              <div className="w-px h-5 bg-border mx-1" />
+
+              {/* Lists */}
+              <button className="p-2 hover:bg-muted rounded text-muted-foreground hover:text-foreground transition-colors">
+                <ListOrdered className="w-4 h-4" />
+              </button>
+              <button className="p-2 hover:bg-muted rounded text-muted-foreground hover:text-foreground transition-colors">
+                <List className="w-4 h-4" />
+              </button>
+
+              <div className="w-px h-5 bg-border mx-1" />
+
+              {/* Insert */}
+              <button className="p-2 hover:bg-muted rounded text-muted-foreground hover:text-foreground transition-colors">
+                <LinkIcon className="w-4 h-4" />
+              </button>
+              <button className="p-2 hover:bg-muted rounded text-muted-foreground hover:text-foreground transition-colors">
+                <ImageIcon className="w-4 h-4" />
+              </button>
+            </div>
+
+            {/* Editor Content */}
+            <div className="p-8 min-h-[300px] bg-white outline-none" contentEditable suppressContentEditableWarning>
+              <h1 className="text-2xl font-bold text-slate-800 mb-6 font-sans">Input Policy</h1>
+              <p className="text-slate-600 leading-relaxed mb-6">
+                The sun had barely begun its ascent, casting a pale, ethereal glow over the sprawling cityscape of NeoLux.
+                X_AE_B-22 had spent the night in a state of deep computational analysis, sifting through the myriad data
+                streams that defined the pulse of the city.
+              </p>
+              <p className="text-slate-600 leading-relaxed">
+                The quiet hum of its processors was the only sound in the dimly lit control room. Suddenly, an encrypted
+                transmission broke through the digital silence, bearing the hallmark of a high-priority message from an
+                unknown source.
+              </p>
+            </div>
+          </div>
 
           {/* Action Buttons */}
           <div className="flex justify-end gap-4 mt-6">
-            <Button className="px-12 h-12 rounded-xl">Save</Button>
-            <Button variant="outline" className="px-12 h-12 rounded-xl">
-              Download
+            <Button className="px-8 min-w-[120px] bg-emerald-500 hover:bg-emerald-600 text-white rounded-xl shadow-sm transition-all">
+              Save
+            </Button>
+            <Button variant="outline" className="px-8 min-w-[120px] rounded-xl border-border hover:bg-muted transition-all">
+              Send
             </Button>
           </div>
         </div>
@@ -188,11 +277,10 @@ const MyContract = () => {
               <button
                 key={page}
                 onClick={() => setCurrentPage(page)}
-                className={`w-8 h-8 rounded-lg text-sm font-medium transition-colors ${
-                  currentPage === page
+                className={`w-8 h-8 rounded-lg text-sm font-medium transition-colors ${currentPage === page
                     ? "border-2 border-foreground text-foreground"
                     : "text-muted-foreground hover:text-foreground"
-                }`}
+                  }`}
               >
                 {page}
               </button>

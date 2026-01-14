@@ -7,8 +7,8 @@ const navItems = [
   { path: "/dashboard", label: "Overview", icon: LayoutGrid },
   { path: "/dashboard/my-contract", label: "My Contract", icon: Plus },
   { path: "/dashboard/signed-contracts", label: "Signed Contracts", icon: FileText },
-  { path: "/dashboard/settings", label: "Settings", icon: Settings },
   { path: "/dashboard/billings", label: "Billings", icon: CreditCard },
+  { path: "/dashboard/settings", label: "Settings", icon: Settings },
 ];
 
 const DashboardSidebar = () => {
@@ -41,8 +41,8 @@ const DashboardSidebar = () => {
               key={item.path}
               to={item.path}
               className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 ${active
-                  ? "bg-[#D4F5E0] text-primary font-medium"
-                  : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                ? "bg-[#D4F5E0] text-primary font-medium"
+                : "text-muted-foreground hover:bg-muted hover:text-foreground"
                 }`}
             >
               <Icon className="w-5 h-5" />
